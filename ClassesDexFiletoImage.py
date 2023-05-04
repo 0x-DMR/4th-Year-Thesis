@@ -1,6 +1,5 @@
 # Greyscale.py is used to convert the classes.dex file to a grey scaled image.
 # This image will then be used to classify the malware through the use of a Convolutional Neural Network. 
-# Author: B00126023                                              # Date Created: 18/03/23
 
 import os                                                                       # Provides the ability to interact with the operating system
 import numpy as np                                                              # Provides the ability to use numerical data to convert the .dex files to greyscale images
@@ -31,19 +30,3 @@ for filename in os.listdir(locationOfData):                                     
 
         outputFile = os.path.splitext(filename)[0] + '.png'                     # Save the image that was created with the same name as a png file
         cv2.imwrite(os.path.join(locationOfData, outputFile), imageToSave)      # Save the image to the location mentioned previously
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
