@@ -8,7 +8,9 @@ locationOfDataset = '/home/dmr/DatasetForExperiments/adware/'
 
 # Gather the information about the dataset, how many images and families
 from keras.preprocessing.image import ImageDataGenerator
-batches = ImageDataGenerator().flow_from_directory(directory=locationOfDataset, target_size=(64,64), batch_size=10000)
+batches = ImageDataGenerator().flow_from_directory(directory=locationOfDataset, 
+                                                    target_size=(64,64), 
+                                                    batch_size=10000)
 
 # Show the number of families of malware in the dataset
 batches.class_indices
