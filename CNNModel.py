@@ -5,7 +5,9 @@ import os                                                   # Import os to chang
 from keras.preprocessing.image import ImageDataGenerator    # Create tensorflow image batches using data augmentation.
 os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices'
 locationOfDataset = '/home/dmr/DatasetForExperiments/scareware/'
-batches = ImageDataGenerator().flow_from_directory(directory=locationOfDataset, target_size=(64,64), batch_size=10000)
+batches = ImageDataGenerator().flow_from_directory(directory=locationOfDataset, 
+                                                    target_size=(64,64), 
+                                                    batch_size=100)
 
 # Print information about Images 
 imgs, labels = next(batches)
@@ -85,7 +87,6 @@ def CNNModel():
     
     CNNModel.compile(loss='categorical_crossentropy', optimizer = 'adam', metrics=['accuracy'])
     return CNNModel     # Return the Convolutional Neural Network Model
-
 
 
 # Measure the effectiveness of the model. This section is used to generate the results of the 
